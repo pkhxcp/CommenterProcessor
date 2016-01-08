@@ -4,9 +4,10 @@ def main():
 	# Initialize the API wrapper
 	r = praw.Reddit(user_agent='Commenter Processor')
 	# This is how to query posts within a specific subreddit
-	submissions = r.get_subreddit('news').search("Iraq",sort="top",limit=10)
+	submissions = r.get_subreddit('news').search("Iraq",sort="hot",limit=10)
 	userList = {}
 	userCount = {}
+	totalUsers = 0
 	# Loop through all the search results
 	for post in submissions:
 		title = str(post).split(":: ", 1)[1]
@@ -25,8 +26,10 @@ def main():
 		for user in value:
 			if user not in userCount:
 				userCount[user] = 1
+				totalUsers += 1
 			else:
-				userCount[user] = userCount[user] + 1
+				userCount[user] += 1
 	print(userCount)
+	print(totalUsers)
 if __name__ == "__main__":
 	main()
