@@ -7,7 +7,6 @@ def getAllComments(seedComments):
 		if type(comment) is praw.objects.MoreComments:
 			allComments += getAllComments(comment.comments())
 		else:
-			commentCount += 1
 			allComments.append(comment)
 	return allComments
 
