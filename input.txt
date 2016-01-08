@@ -1,0 +1,4 @@
+SUBREDDITS: news; worldnews; mideastregionalwar
+KEYWORDS: Iraq
+LIMIT: 1
+TYPE: hot
