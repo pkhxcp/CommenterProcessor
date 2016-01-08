@@ -38,8 +38,8 @@ def main():
 				totalUsers += 1
 			else:
 				userCount[user] += 1
-	with open('output.txt', 'w') as output:
-		pickle.dump(userCount, output)
+	print(userCount)
+	print(len(usercount))
 
 if __name__ == "__main__":
 	main()
