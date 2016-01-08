@@ -1,5 +1,14 @@
 import praw
 
+def getAllComments(comments):
+	allComments = []
+	for comment in comments:
+		if type(comment) is praw.objects.MoreComments:
+			allComments += getAllComments(comment.comments())
+		else:
+			allComments.append(comment)
+	return allComments
+
 # Initialize the API wrapper
 r = praw.Reddit(user_agent='Commenter Processor')
 
@@ -8,15 +17,16 @@ submissions = r.get_subreddit('news').search("Iraq",sort="top",limit=10)
 
 # Loop through all the search results
 for post in submissions:
+
+	allComments = getAllComments(post.comments)
 	
 	# Loop through all the comments within a post
-	for comment in post.comments:
+	for comment in allComments:
 
-		# Check that a comment is not a MoreComments type
-		if(type(comment) is not praw.objects.MoreComments):
-
-			# Get the Redditor's name and print it
-			author = comment.author
-			# Make sure the Redditor is not deleted
-			if(author != None):
-				print(author.name)
+		# Get the Redditor's name and print it
+		author = comment.author
+		# Make sure the Redditor is not deleted
+		if(author != None):
+			print(author.name)
+		else:
+			print("None")
