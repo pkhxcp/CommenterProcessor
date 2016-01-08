@@ -4,7 +4,13 @@ def getAllComments(seedComments):
 	allComments = []
 	for comment in praw.helpers.flatten_tree(seedComments):
 		if type(comment) is praw.objects.MoreComments:
-			allComments += getAllComments(comment.comments())
+			nestedComments = []
+			try:
+				nestedComments = comment.comments()
+			except AssertionError:
+				print("Tried to scrape a MoreComments object with no mo comments")
+			if(len(nestedComments) != 0):
+				allComments += getAllComments(nestedComments)
 		else:
 			allComments.append(comment)
 	return allComments
@@ -14,7 +20,7 @@ def main():
 	subList = []
 	keyList = []
 	searchLimit = 0
-	type = ""
+	sortType = ""
 	with open('input.txt', 'r') as input:
 		for line in input:
 			category, contents = line.split(": ", 1)
@@ -22,18 +28,22 @@ def main():
 			contents[-1] = contents[-1].rstrip('\n')
 			if category == "SUBREDDITS":
 				subList = contents
+				print("SUBREDDITS: "+str(contents))
 			elif category == "KEYWORDS":
 				keyList = contents
+				print("KEYWORDS: "+str(contents))
 			elif category == "LIMIT":
 				searchLimit = contents
+				print("LIMIT: "+str(contents))
 			elif category == "TYPE":
-				type = contents
+				sortType = contents
+				print("TYPE: "+str(contents))
 	# Initialize the API wrapper
 	r = praw.Reddit(user_agent='Commenter Processor')
 	# This is how to query posts within a specific subreddit
 	for subreddit in subList:
 		for keyword in keyList:
-			submissions = r.get_subreddit(subreddit).search(keyword,sort=str(type[0]),limit=int(searchLimit[0]))
+			submissions = r.get_subreddit(subreddit).search(keyword,sort=str(sortType[0]),limit=int(searchLimit[0]))
 			userList = {}
 			userCount = {}
 			totalUsers = 0
