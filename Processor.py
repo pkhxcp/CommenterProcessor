@@ -26,8 +26,7 @@ def main():
 		title = str(post).split(":: ", 1)[1]
 		userList.setdefault(title, [])
 		# Loop through all the comments within a post
-		post.replace_more_comments(limit=None, threshold=0)
-		for comment in praw.helpers.flatten_tree(post.comments):
+		for comment in getAllComments(post.comments):
 			# Get the Redditor's name and print it
 			author = comment.author
 			# Make sure the Redditor is not deleted
