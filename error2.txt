@@ -1,0 +1,169 @@
+****************OUTPUT*********************************************************
+TITLE: Japan not taking in refugees; says it must look after its citizens first
+TITLE: US President Barack Obama is facing an insurrection from state govern...
+TITLE: Michigan, Alabama, Texas Refuse to Accept Syrian Refugees in Wake of ...
+TITLE: US President Obama slams domestic 'hysteria' over Syrian refugees
+
+*************COMMAND LINE COPY PASTE*******************************************
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Josh\Documents\CommenterProcessor>py Processor.py
+SUBREDDITS: ['news', 'worldnews', 'syriancivilwar']
+KEYWORDS: ['refugee']
+LIMIT: ['5']
+TYPE: ['hot']
+C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-packages\praw\d
+ecorators.py:51: DeprecationWarning: inspect.getargspec() is deprecated, use ins
+pect.signature() instead
+  func_args = inspect.getargspec(function).args
+SUBREDDIT: news, KEYWORD: refugee, COUNT: 1
+SUBREDDIT: news, KEYWORD: refugee, COUNT: 2
+SUBREDDIT: news, KEYWORD: refugee, COUNT: 3
+SUBREDDIT: news, KEYWORD: refugee, COUNT: 4
+***********************************************ERROR STARTS HERE****************
+Traceback (most recent call last):
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 376, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 559, in urlopen
+    body=body, headers=headers)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 378, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 1174, in getresponse
+    response.begin()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 282, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 243, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\socket.py",
+line 571, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 924, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 786, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 570, in read
+    v = self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly close
+d by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\adapters.py", line 376, in send
+    timeout=timeout
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 609, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\util\retry.py", line 247, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\packages\six.py", line 309, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 559, in urlopen
+    body=body, headers=headers)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\packages\urllib3\connectionpool.py", line 378, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 1174, in getresponse
+    response.begin()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 282, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\http\client.
+py", line 243, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\socket.py",
+line 571, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 924, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 786, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\ssl.py", lin
+e 570, in read
+    v = self._sslobj.read(len, buffer)
+requests.packages.urllib3.exceptions.ProtocolError: ('Connection aborted.', Conn
+ectionResetError(10054, 'An existing connection was forcibly closed by the remot
+e host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Processor.py", line 81, in <module>
+    main()
+  File "Processor.py", line 62, in main
+    post.replace_more_comments(limit=None, threshold=0)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\objects.py", line 1288, in replace_more_comments
+    new_comments = item.comments(update=False)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\objects.py", line 790, in comments
+    return self._continue_comments(update)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\objects.py", line 773, in _continue_comments
+    self.submission.permalink, self.parent_id.split('_', 1)[1]))
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\__init__.py", line 1043, in get_submission
+    params=params)
+  File "<decorator-gen-191>", line 2, in from_url
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\decorators.py", line 268, in wrap
+    return function(*args, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\objects.py", line 1111, in from_url
+    response = reddit_session.request_json(url, params=params)
+  File "<decorator-gen-8>", line 2, in request_json
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\decorators.py", line 113, in raise_api_exceptions
+    return_value = function(*args, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\__init__.py", line 612, in request_json
+    retry_on_error=retry_on_error)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\__init__.py", line 444, in _request
+    response = handle_redirect()
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\__init__.py", line 425, in handle_redirect
+    verify=self.http.validate_certs, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\handlers.py", line 148, in wrapped
+    result = function(cls, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\handlers.py", line 57, in wrapped
+    return function(cls, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\praw\handlers.py", line 103, in request
+    allow_redirects=False, verify=verify)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\sessions.py", line 576, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Josh\AppData\Local\Programs\Python\Python35-32\lib\site-package
+s\requests\adapters.py", line 426, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetErro
+r(10054, 'An existing connection was forcibly closed by the remote host', None,
+10054, None))
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='output.txt' mode=
+'w' encoding='cp1252'>
